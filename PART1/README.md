@@ -2,9 +2,8 @@
 
 ## Files in this submission
 - `part1_eda_cleaning_bigmart.ipynb` — executed notebook, runs top-to-bottom, contains every task, printed output, and all six plots.
-- `analysis_bigmart.py` — the same analysis as a plain script (source of the notebook).
 - `cleaned_data.csv` — the cleaned dataset (8,523 rows × 13 columns), used in Parts 2 and 3.
-- `plots/` — the six PNG charts, also embedded in the notebook.
+- `plots/` — the six PNG charts.
 - `README.md` — this file.
 
 ## Dataset description
