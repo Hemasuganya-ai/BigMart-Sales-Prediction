@@ -1,0 +1,145 @@
+{
+  "dt_unconstrained": {
+    "train_acc": 1.0,
+    "test_acc": 0.7407624633431085
+  },
+  "dt_controlled": {
+    "train_acc": 0.7984746259900264,
+    "test_acc": 0.7818181818181819
+  },
+  "gini_entropy": {
+    "gini_test_acc": 0.7818181818181819,
+    "entropy_test_acc": 0.8087976539589443
+  },
+  "random_forest": {
+    "train_acc": 0.8439425051334702,
+    "test_acc": 0.8111436950146628,
+    "test_auc": 0.8897529507966531,
+    "top5_features": {
+      "Item_MRP": 0.48796278709903446,
+      "Item_Visibility": 0.06193165046785837,
+      "Outlet_Age": 0.061439246100529456,
+      "Outlet_Establishment_Year": 0.05710913031500807,
+      "Outlet_Type_Supermarket Type1": 0.0543835109606724
+    }
+  },
+  "gradient_boosting": {
+    "train_acc": 0.8319155177471399,
+    "test_acc": 0.8146627565982405,
+    "test_auc": 0.8937726971121152
+  },
+  "ablation": {
+    "dropped_features": [
+      "Item_Type_Others",
+      "Item_Type_Hard Drinks",
+      "Item_Type_Seafood",
+      "Outlet_Identifier_OUT049",
+      "Item_Type_Breakfast"
+    ],
+    "full_auc": 0.8897529507966531,
+    "reduced_auc": 0.8909588746912918,
+    "auc_change": 0.001205923894638694
+  },
+  "cv_results": {
+    "Logistic Regression": {
+      "mean_auc": 0.896577963045021,
+      "std_auc": 0.00893525372131332
+    },
+    "Decision Tree (max_depth=5)": {
+      "mean_auc": 0.8719622897591675,
+      "std_auc": 0.021502439805873384
+    },
+    "Random Forest": {
+      "mean_auc": 0.889464303840322,
+      "std_auc": 0.008715025969656775
+    },
+    "Gradient Boosting": {
+      "mean_auc": 0.8963835982740511,
+      "std_auc": 0.009246143438641895
+    }
+  },
+  "grid_search": {
+    "n_total_fits": 90,
+    "best_params": {
+      "randomforestclassifier__max_depth": 10,
+      "randomforestclassifier__min_samples_leaf": 5,
+      "randomforestclassifier__n_estimators": 100
+    },
+    "best_cv_score": 0.892069810786556,
+    "test_auc": 0.8901115617265086
+  },
+  "learning_curve": [
+    {
+      "Training fraction": 0.2,
+      "n_rows": 1363,
+      "Training AUC": 0.9441456030112881,
+      "Test AUC": 0.8798178449203897
+    },
+    {
+      "Training fraction": 0.4,
+      "n_rows": 2727,
+      "Training AUC": 0.9347338860226276,
+      "Test AUC": 0.8863822833811023
+    },
+    {
+      "Training fraction": 0.6,
+      "n_rows": 4090,
+      "Training AUC": 0.9295329202867236,
+      "Test AUC": 0.8897570806730046
+    },
+    {
+      "Training fraction": 0.8,
+      "n_rows": 5454,
+      "Training AUC": 0.9276291867701559,
+      "Test AUC": 0.8901831462499347
+    },
+    {
+      "Training fraction": 1.0,
+      "n_rows": 6818,
+      "Training AUC": 0.9253287308829764,
+      "Test AUC": 0.8901115617265086
+    }
+  ],
+  "reload_predict": {
+    "predictions": [
+      0,
+      0
+    ],
+    "probabilities": [
+      0.19895141485665602,
+      0.19040239022095914
+    ]
+  },
+  "summary_table": [
+    {
+      "Model": "Logistic Regression (Part 2, C=1.0)",
+      "CV Mean AUC": 0.896577963045021,
+      "CV Std AUC": 0.00893525372131332,
+      "Test AUC": 0.8951
+    },
+    {
+      "Model": "Decision Tree (max_depth=5)",
+      "CV Mean AUC": 0.8719622897591675,
+      "CV Std AUC": 0.021502439805873384,
+      "Test AUC": 0.8479861346284626
+    },
+    {
+      "Model": "Random Forest (n=100, depth=10)",
+      "CV Mean AUC": 0.889464303840322,
+      "CV Std AUC": 0.008715025969656775,
+      "Test AUC": 0.8897529507966531
+    },
+    {
+      "Model": "Gradient Boosting",
+      "CV Mean AUC": 0.8963835982740511,
+      "CV Std AUC": 0.009246143438641895,
+      "Test AUC": 0.8937726971121152
+    },
+    {
+      "Model": "Tuned RF Pipeline (GridSearchCV best)",
+      "CV Mean AUC": 0.892069810786556,
+      "CV Std AUC": NaN,
+      "Test AUC": 0.8901115617265086
+    }
+  ]
+}
