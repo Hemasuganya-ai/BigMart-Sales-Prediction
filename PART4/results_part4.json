@@ -1,0 +1,136 @@
+{
+  "jsonschema_backend": "real",
+  "demo_rows": [
+    {
+      "scenario": "scenario_high_price",
+      "features": {
+        "Item_Weight": 12.5,
+        "Item_Fat_Content": "Regular",
+        "Item_Visibility": 0.03,
+        "Item_Type": "Snack Foods",
+        "Item_MRP": 249.0,
+        "Outlet_Identifier": "OUT027",
+        "Outlet_Establishment_Year": 1985,
+        "Outlet_Size": "Medium",
+        "Outlet_Location_Type": "Tier 3",
+        "Outlet_Type": "Supermarket Type3",
+        "Outlet_Age": 28
+      },
+      "predicted_class": 0,
+      "predicted_proba": 0.4780944141906642,
+      "explanation": {
+        "prediction_label": "[SIMULATED] below-median seller",
+        "confidence_level": "low",
+        "top_reason": "[SIMULATED] Item_MRP (249.0) is above the dataset average (~141), and MRP is the single strongest driver of predicted sales in this model.",
+        "second_reason": "[SIMULATED] Item_Visibility (0.03) is lower than average, and the outlet format (Supermarket Type3) contributes a secondary effect on the prediction.",
+        "next_step": "[SIMULATED] Corroborate this prediction against recent actual sales before acting on it, especially given the model's overall test AUC of ~0.89."
+      },
+      "status": "pass [SIMULATED response]"
+    },
+    {
+      "scenario": "scenario_low_price",
+      "features": {
+        "Item_Weight": 6.0,
+        "Item_Fat_Content": "Low Fat",
+        "Item_Visibility": 0.09,
+        "Item_Type": "Baking Goods",
+        "Item_MRP": 45.0,
+        "Outlet_Identifier": "OUT010",
+        "Outlet_Establishment_Year": 1998,
+        "Outlet_Size": "Small",
+        "Outlet_Location_Type": "Tier 3",
+        "Outlet_Type": "Grocery Store",
+        "Outlet_Age": 15
+      },
+      "predicted_class": 0,
+      "predicted_proba": 0.022330470595905268,
+      "explanation": {
+        "prediction_label": "[SIMULATED] below-median seller",
+        "confidence_level": "high",
+        "top_reason": "[SIMULATED] Item_MRP (45.0) is below the dataset average (~141), and MRP is the single strongest driver of predicted sales in this model.",
+        "second_reason": "[SIMULATED] Item_Visibility (0.09) is higher than average, and the outlet format (Grocery Store) contributes a secondary effect on the prediction.",
+        "next_step": "[SIMULATED] Corroborate this prediction against recent actual sales before acting on it, especially given the model's overall test AUC of ~0.89."
+      },
+      "status": "pass [SIMULATED response]"
+    },
+    {
+      "scenario": "scenario_mid_price",
+      "features": {
+        "Item_Weight": 14.0,
+        "Item_Fat_Content": "Low Fat",
+        "Item_Visibility": 0.05,
+        "Item_Type": "Fruits and Vegetables",
+        "Item_MRP": 143.0,
+        "Outlet_Identifier": "OUT049",
+        "Outlet_Establishment_Year": 1999,
+        "Outlet_Size": "Medium",
+        "Outlet_Location_Type": "Tier 1",
+        "Outlet_Type": "Supermarket Type1",
+        "Outlet_Age": 14
+      },
+      "predicted_class": 0,
+      "predicted_proba": 0.47018115901441054,
+      "explanation": {
+        "prediction_label": "[SIMULATED] below-median seller",
+        "confidence_level": "low",
+        "top_reason": "[SIMULATED] Item_MRP (143.0) is above the dataset average (~141), and MRP is the single strongest driver of predicted sales in this model.",
+        "second_reason": "[SIMULATED] Item_Visibility (0.05) is lower than average, and the outlet format (Supermarket Type1) contributes a secondary effect on the prediction.",
+        "next_step": "[SIMULATED] Corroborate this prediction against recent actual sales before acting on it, especially given the model's overall test AUC of ~0.89."
+      },
+      "status": "pass [SIMULATED response]"
+    }
+  ],
+  "ab_rows": [
+    {
+      "scenario": "scenario_high_price",
+      "temp0": {
+        "prediction_label": "[SIMULATED] below-median seller",
+        "confidence_level": "low",
+        "top_reason": "[SIMULATED] Item_MRP (249.0) is above the dataset average (~141), and MRP is the single strongest driver of predicted sales in this model.",
+        "second_reason": "[SIMULATED] Item_Visibility (0.03) is lower than average, and the outlet format (Supermarket Type3) contributes a secondary effect on the prediction.",
+        "next_step": "[SIMULATED] Corroborate this prediction against recent actual sales before acting on it, especially given the model's overall test AUC of ~0.89."
+      },
+      "temp07": {
+        "prediction_label": "[SIMULATED] below-median seller",
+        "confidence_level": "low",
+        "top_reason": "[SIMULATED] Item_MRP (249.0) is above the dataset average (~141), and MRP is the single strongest driver of predicted sales in this model.",
+        "second_reason": "[SIMULATED] Item_Visibility (0.03) is lower than average, and the outlet format (Supermarket Type3) contributes a secondary effect on the prediction.",
+        "next_step": "[SIMULATED] Corroborate this prediction against recent actual sales before acting on it, especially given the model's overall test AUC of ~0.89."
+      }
+    },
+    {
+      "scenario": "scenario_low_price",
+      "temp0": {
+        "prediction_label": "[SIMULATED] below-median seller",
+        "confidence_level": "high",
+        "top_reason": "[SIMULATED] Item_MRP (45.0) is below the dataset average (~141), and MRP is the single strongest driver of predicted sales in this model.",
+        "second_reason": "[SIMULATED] Item_Visibility (0.09) is higher than average, and the outlet format (Grocery Store) contributes a secondary effect on the prediction.",
+        "next_step": "[SIMULATED] Corroborate this prediction against recent actual sales before acting on it, especially given the model's overall test AUC of ~0.89."
+      },
+      "temp07": {
+        "prediction_label": "[SIMULATED] below-median seller",
+        "confidence_level": "high",
+        "top_reason": "[SIMULATED] Item_MRP (45.0) is below the dataset average (~141), and MRP is the single strongest driver of predicted sales in this model.",
+        "second_reason": "[SIMULATED] Item_Visibility (0.09) is higher than average, and the outlet format (Grocery Store) contributes a secondary effect on the prediction.",
+        "next_step": "[SIMULATED] Corroborate this prediction against recent actual sales before acting on it, especially given the model's overall test AUC of ~0.89."
+      }
+    },
+    {
+      "scenario": "scenario_mid_price",
+      "temp0": {
+        "prediction_label": "[SIMULATED] below-median seller",
+        "confidence_level": "low",
+        "top_reason": "[SIMULATED] Item_MRP (143.0) is above the dataset average (~141), and MRP is the single strongest driver of predicted sales in this model.",
+        "second_reason": "[SIMULATED] Item_Visibility (0.05) is lower than average, and the outlet format (Supermarket Type1) contributes a secondary effect on the prediction.",
+        "next_step": "[SIMULATED] Corroborate this prediction against recent actual sales before acting on it, especially given the model's overall test AUC of ~0.89."
+      },
+      "temp07": {
+        "prediction_label": "[SIMULATED] below-median seller",
+        "confidence_level": "low",
+        "top_reason": "[SIMULATED] Item_MRP (143.0) is above the dataset average (~141), and MRP is the single strongest driver of predicted sales in this model.",
+        "second_reason": "[SIMULATED] Item_Visibility (0.05) is lower than average, and the outlet format (Supermarket Type1) contributes a secondary effect on the prediction.",
+        "next_step": "[SIMULATED] Corroborate this prediction against recent actual sales before acting on it, especially given the model's overall test AUC of ~0.89. Re-check this in a month as more sales data comes in."
+      }
+    }
+  ]
+}
