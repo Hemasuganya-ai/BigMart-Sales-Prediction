@@ -1,16 +1,9 @@
  Part 4 — LLM-Powered Feature
 
 **Track chosen: (C) Model Prediction Explanation Pipeline** — it builds directly on `best_model.pkl` from Part 3.
-
-Run with:
-```bash
-pip install pandas numpy scikit-learn joblib requests jsonschema
-export LLM_API_KEY="your-key-here"
-python modeling_part4.py
 ```
 This produces all console output below and `results_part4.json`.
 
-## ⚠️ A note on how this was actually run
 
 `call_llm()` in `modeling_part4.py` is a complete, real implementation: it POSTs to a live
 OpenRouter-style `/chat/completions` endpoint, reads the key from the `LLM_API_KEY`
