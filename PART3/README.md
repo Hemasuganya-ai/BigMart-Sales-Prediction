@@ -183,5 +183,3 @@ print(reloaded_probabilities)     # [0.199 0.190]
 **Recommendation: Logistic Regression (C=1.0, 'class_weight='balanced'').** It posts the best or tied-best score on every axis that matters here — the highest 5-fold CV mean AUC (0.8966, essentially tied with Gradient Boosting's 0.8964), a cross-validation standard deviation as low as any ensemble candidate, and the highest test-set AUC (0.8951) of any model evaluated. It is also the simplest, fastest, and most interpretable model in the comparison — its coefficients (Part 2) can be directly explained to the client in plain language, unlike a forest's aggregated feature importances or a boosted ensemble's opaque sequence of correction trees. Given that the more complex models (Random Forest, Gradient Boosting, tuned RF pipeline) do not meaningfully outperform it on AUC, there's no accuracy trade-off being made by choosing the simpler, more transparent, and cheaper-to-serve model — a case where added model complexity buys essentially nothing on this dataset.
 
 
-- 'README.md' — this file (documents both Part 2 and Part 3).
-
