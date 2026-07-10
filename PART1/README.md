@@ -18,17 +18,17 @@ One numeric feature was engineered: **`Outlet_Age`** = 2013 − `Outlet_Establis
 | Item_Weight | 1,463 | 17.17% |
 | Outlet_Size | 2,410 | 28.28% |
 
-**`Outlet_Size` exceeds the 20% threshold.** Per the task rules, it is not median-filled (it's categorical anyway, not numeric), and dropping 28% of rows was rejected as too costly. Instead, its missingness looks structural rather than random — specific outlets (mostly Grocery Stores and some Supermarket Type1s) simply never reported a size — so it was filled with the **mode of `Outlet_Size` within each `Outlet_Type`** (e.g., Grocery Store → "Small", Supermarket Type3 → "Medium"), which is more defensible than a single global mode.
-
 **`Item_Weight`** (17.2%, below the threshold) was filled with the column **median**, not the mean. **Why median:** item weight is a physical product attribute with a wide range (4.5–21.4 kg-equivalent units) driven by very different product categories (e.g., snack packets vs. household items) — heavier/lighter niche products can pull a mean away from what a "typical" item actually weighs, and the median is more robust to that category-driven spread. This same median-over-mean logic is revisited more rigorously for the two most-skewed columns in Task 7a.
 
-## Duplicate detection
-`df.duplicated()` finds **0** duplicate rows across the full dataset — every row is a unique item–outlet combination, so no rows were removed and no null percentages changed.
+**`Outlet_Size` exceeds the 20% threshold.** Per the task rules, it is not median-filled (it's categorical anyway, not numeric), and dropping 28% of rows was rejected as too costly. Instead, its missingness looks structural rather than random — specific outlets (mostly Grocery Stores and some Supermarket Type1s) simply never reported a size — so it was filled with the **mode of `Outlet_Size` within each `Outlet_Type`** (e.g., Grocery Store → "Small", Supermarket Type3 → "Medium"), which is more defensible than a single global mode.
 
-## Data type correction
-- **`Item_Fat_Content`** had five raw values that really represent only two categories, due to inconsistent data entry: `'LF'`, `'Low Fat'`, `'low fat'` (→ **Low Fat**) and `'Regular'`, `'reg'` (→ **Regular**). These were standardized with `.replace()` before casting to `category` — this is the "incorrect inferred representation" fix, since the raw column looked like 5 categories but is really 2.
-- Six repetitive string columns (`Item_Fat_Content`, `Item_Type`, `Outlet_Identifier`, `Outlet_Size`, `Outlet_Location_Type`, `Outlet_Type`) were converted to `category` dtype.
-- **Memory usage:** 3,609.15 KB → 901.18 KB, a **75.0% reduction** — a very large drop because nearly every non-numeric column in this dataset is low-cardinality and repetitive (only 10 outlets, 16 item types, etc.), which is exactly what `category` dtype is built to compress.
+## Duplicate detection:
+`df.duplicated()` finds 0 duplicate rows across the full dataset — every row is a unique item–outlet combination, so no rows were removed and no null percentages changed.
+
+## Data type correction:
+**`Item_Fat_Content`** had five raw values that really represent only two categories, due to inconsistent data entry: 'LF', 'Low Fat', 'low fat' (→ **Low Fat**) and 'Regular', 'reg' (→ **Regular**). These were standardized with .replace() before casting to `category` — this is the "incorrect inferred representation" fix, since the raw column looked like 5 categories but is really 2.
+  - Six repetitive string columns (`Item_Fat_Content`, `Item_Type`, `Outlet_Identifier`, `Outlet_Size`, `Outlet_Location_Type`, `Outlet_Type`) were converted to `category` dtype.
+  - **Memory usage:** 3,609.15 KB → 901.18 KB, a **75.0% reduction** — a very large drop because nearly every non-numeric column in this dataset is low-cardinality and repetitive (only 10 outlets, 16 item types, etc.), which is exactly what `category` dtype is built to compress.
 
 ## Descriptive statistics & skewness
 `df.describe()` is in the notebook. Skewness per numeric column:
