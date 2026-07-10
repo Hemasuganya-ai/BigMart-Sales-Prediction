@@ -2,9 +2,11 @@
 
 Dataset: `cleaned_data.csv` (Big Mart item/outlet sales data, 8,523 rows × 13 columns, output of Part 1).
 
-```
-This produces all console output below, `roc_curve.png`, and `results.json`.
+## Files in this repository
 
+- `part2_modeling.ipynb` — full preprocessing, training, and evaluation pipeline (run top-to-bottom).
+- `cleaned_data.csv` — the input dataset (from Part 1).
+- `roc_curve.png` — ROC curve plot for the baseline (C=1.0) logistic regression model.
 ---
 
 ## 1. Label definitions
@@ -114,10 +116,6 @@ ROC curve: see `roc_curve.png`.
 
 The interval **excludes zero** (both bounds are positive), so the C=1.0 model's small AUC advantage over the C=0.01 model is statistically consistent across resamples of this test set — it's a real, if modest, difference rather than noise. That said, the magnitude of the difference itself is small (about 0.003 AUC points), so while the ranking (C=1.0 > C=0.01) is reliable, the practical difference in model quality is minor.
 
-## 8. Files in this repository
 
-- `part2_modeling.ipynb` — full preprocessing, training, and evaluation pipeline (run top-to-bottom).
-- `cleaned_data.csv` — the input dataset (from Part 1).
-- `roc_curve.png` — ROC curve plot for the baseline (C=1.0) logistic regression model.
 - `results.json` — machine-readable snapshot of all key metrics.
 - `README.md` — this file.
